@@ -1,0 +1,4 @@
+Display.SelectFileDialog.SelectFile Title: $'''PDFファイルを選択してください''' FileFilter: $'''*.pdf''' IsTopMost: True CheckIfFileExists: True SelectedFile=> SelectedFile ButtonPressed=> ButtonPressed
+Pdf.ExtractTextFromPDF.ExtractText PDFFile: SelectedFile DetectLayout: False ExtractedText=> ExtractedPDFText
+File.WriteText File: $'''C:\\PowerAutomate\\PDF\\result.txt''' TextToWrite: ExtractedPDFText AppendNewLine: True IfFileExists: File.IfFileExists.Overwrite Encoding: File.FileEncoding.DefaultEncoding
+Display.ShowMessageDialog.ShowMessage Title: $'''Complete''' Message: $'''PDFからテキスト抽出が完了しました''' Icon: Display.Icon.Information Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: True ButtonPressed=> ButtonPressed2
